@@ -29,4 +29,10 @@ nano		//调用nano编辑器，[ctrl]+字符进行操作，如[ctrl]-X离开软�
 
 sync		//数据同步写入磁盘,直接sync命令即可
 
+shutdown	//关机命令，要执行这个命令需要在root权限下，可以使用sudo su获取root权限，shutdown -h 20:30/now
+
+reboot		//重启命令
+
+init		//切换执行等级   run level 0: 关机；run level 3:纯命令行模式；run level 5:含有图形界面模式；run level 6:重启    例如： init 0 即为关机命令
+
 
