@@ -105,7 +105,19 @@ mkdir
 ：创建新目录，mkdir test即为创建一个test新目录；如果要创建一个含有权限到目录，mkdir -m 711 test即创建一个权限为711的目录test
 
 rmdir
-：删除一个空到目录，如rmdir test即为删除空目录test，当test非空时无法删除。rmdir -p test1/test2/test3，-p代表将上层空目录一并删除。
+：删除一个空到目录，如rmdir test即为删除空目录test，当test非空时无法删除。rmdir -p test1/test2/test3，-p代表将上层空目录一并删除
+
+ls
+:查看文件和目录
+
+cp
+:复制文件，命令：cp 源文件 目标文件；源文件和目标文件可以是文件或是文件夹
+
+mv
+:移动文件和目录，或更名；命令：cp source destinaion; 多个需要移动时:cp source1 source2 source3... directory；
+重命名命令：mv mvtest mvtest2;即对目录mvtest重命名为mvtests2
+
+
 
 ```
 
