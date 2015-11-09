@@ -234,53 +234,47 @@ bzcat 文件名.bz2
 :解压缩
 
 tar
+:压缩常见命令，主要有
+压缩： tar -jcv -f filename.tar.bz2 被压缩的文件或目录名称
+查询： tar -jtv -f filename.tar.bz2
+解压缩： tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录
 
+dump
+:完整备份工具
+
+mkisofs
+:新建镜像文件
+
+cdrecord
+:光盘刻录工具
+
+dd
+:可以备份完整的分区或磁盘
+
+cpio
+:备份命令
 	
 ```
 
-## [练习2]	kernel mode linux：
+## [练习2]	学习shell与shell script：
 
-该步骤和过程主要参考：
-* http://web.yl.is.s.u-tokyo.ac.jp/~tosh/kml/index.html
 
-####1.打补丁
+####1.vim程序编辑器
 
-    下载[Kernel Mode Linux Patch for Linux Kernel 4.0 (for IA-32, AMD64, MicroBlaze, and ARM)](http://web.yl.is.s.u-tokyo.ac.jp/~tosh/kml/kml/for4.x/kml_4.0_001.diff.gz) 
+```
 
-    将kml_4.0_001.diff文件放在/obj/linux_deficonfig/source目录下
-
-    使用下列命令进行打补丁：
-    patch -p1 < kml_4.0_001.diff
-
-    接着到/linux_deficonfig重新make内核
+```
 
 
 
 ####2.静态编译
 
-    然后在/ramdisk下创建一个1.c文件，内容如下：
 
 ```
-#include<stdio.h>
-int main(int argc, char* argv[])
-{
-    __asm__ __volatile__("cli");
-    int i=0,j=1,k=2,l=3,m=4,n=5;
-    printf("ping i: %d\n", i);
-    printf("ping j: %d\n", j);
-    printf("ping k: %d\n", k);
-    printf("ping l: %d\n", l);
-    printf("ping m: %d\n", m);
-    printf("ping n: %d\n", n);
-    return 0;
-}
+
 
 ```
-    接着在/ramdisk目录下静态编译1.c文件
-    gcc -static 1.c -o 1
-   
-    生成文件 1
-   
+
 
 
 ####内容参考《Linux私房菜》
