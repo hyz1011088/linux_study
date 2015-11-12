@@ -292,9 +292,86 @@ vim环境变量设置与记录：～/.vimrc,~/.viminfo
 
 ```
 
+## [练习1]	学习shell和shell script：
+
+####1. 学习bash
+
+```
+type [-tpa] name
+:不带参数时，显示命令是否是内置命令；-t显示命令的意义，-p表示当name是外部命令时，才会显示完整文件名；-a表示由PATH变量定义的路径中，将所有含有name的命令都列出来。命令例如：type ls
+
+echo $PATH
+:PATH变量的显示，要显示其他变量，替换PATH即可
+
+unset name
+:取消设置的name变量的内容
+
+env
+:env查看环境变量与常见环境变量说明
+
+set
+:查看所有环境变量（含环境变量和自定义变量）
+
+locale
+:查看linux支持多少种语系
+
+环境变量=全局变量，自定义变量=局部变量
+
+read
+:读取来自键盘输入的变量
+
+declare/typeset
+:声明变量类型
+
+array
+:数组变量类型
+
+ulimit
+:设置限制用户的某些系统资源
+
+alias
+:命令别名设置。例如：alias lm='ls -l | more',即设置lm执行ls -l | more
+
+unalias
+:取消别名设置，如：unalias lm，即取消刚才的别名lm
+
+history
+:查看历史命令,history 10即为查看最近10条command记录
+
+!number
+:执行第几条命令的意思
+
+!command
+:由最近的命令向前搜索命令串开头为command的那个命令，并执行
+
+!!
+:执行上一条命令
+
+cut
+:可以将一段信息的某一段“切”出来，处理的信息是以“行”为单位的
+
+grep
+:grep分析一行信息，若当中有需要的信息，就将该行拿出来。而cut是在一行信息中取出我们想要的
+
+sort
+:根据不同的数据类型进行排序。如命令：cat /etc/passwd | sort，即为对/etc/passwd目录下的帐号进行排序
+
+uniq
+:将重复的数据一行显示。命令：last | cut -d ' ' -f1 | sort | uniq -c，使用last将帐号列出，仅取出帐号列，进行排序后仅取出一位，同时进行登录次数计数
+
+wc
+:统计的行数，字数，字符数。命令：cat /etc/man.config | wc即为统计/etc/man.config中有多少相关的字，行，字符数
+
+tr,col,join,paste,expand
+:字符转换命令
+
+xargs
+:参数代换
+
+```
 
 
-####2.静态编译
+####2. 静态编译
 
 
 ```
