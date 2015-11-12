@@ -292,9 +292,8 @@ vim环境变量设置与记录：～/.vimrc,~/.viminfo
 
 ```
 
-## [练习1]	学习shell和shell script：
 
-####1. 学习bash
+####2. 学习bash
 
 ```
 type [-tpa] name
@@ -371,7 +370,7 @@ xargs
 ```
 
 
-####2. 静态编译
+####3. 静态编译
 
 
 ```
