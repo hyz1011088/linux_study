@@ -370,10 +370,18 @@ xargs
 ```
 
 
-####3. 静态编译
-
+####3. 正则表达式和文件格式化处理
 
 ```
+grep
+:进行行字符串数据的对比，然后将符合用户需求的字符串打印出来（在查询字符串时，是以整行为单位进行数据选取的。命令：dmesg | grep 'eth0'，即为用dmesg列出内核信息，再以grep找出含eth0的那行
+
+以查找文件1.txt中the为例：
+查找带the的行：		grep -n 'the' 1.txt
+查找不带the的行：	grep -vn 'the' 1.txt
+查找无论大小写the的行：	grep -in 'the' 1.txt
+查找test或taste的行时：	grep -n 't[ae]st' 1.txt
+
 
 
 ```
