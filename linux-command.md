@@ -381,8 +381,48 @@ grep
 查找不带the的行：	grep -vn 'the' 1.txt
 查找无论大小写the的行：	grep -in 'the' 1.txt
 查找test或taste的行时：	grep -n 't[ae]st' 1.txt
+查找拥有oo的字符串：	grep -n 'oo' 1.txt
+查找不想要oo前面有g:	grep -n '[^g]oo' 1.txt
+查找oo前面没有小写字符：	grep -n '[^a-z]oo' 1.txt
+查找有数字的那一行：	grep -n '[0-9]' 1.txt
+查找the在行首列出：	grep -n '^the' 1.txt
+查找小写字母在行首：	grep -n '^[a-z]' 1.txt
+查找行尾为小数点的行：	grep -n '\.$' 1.txt
+
+.(小数点)：代表一定有一个任意字符的意思；
+*（星号）：代表重复前一个0到无穷多次的意思；
+.*:代表0个或多个任意字符的意思；
+
+查找g??d的字符串：	grep -n 'g..d' 1.txt
+查找至少两个oo的字符串：	grep -n 'ooo*' 1.txt
+找出任意数字的序列：	grep -n '[0-9][0-9]*'
+
+限定连续个RE字符范围{}，例：
+查找含两个o的字符串：	grep -n 'o\{2\}' 1.txt
+查找含2到5个o的字符串：	grep -n 'o\{2,5\}' 1.txt
+查找含两个以上o字符串：	grep -n 'o\{2,\}' 1.txt
 
 
+sed [-nefr] [动作]
+:以行为单位进行操作
+
+printf '打印格式' 实际内容
+:格式化打印
+
+awk '条件类型1{动作1} 条件类型{动作2} ...' filename
+:awk倾向将一行分成数个字段进行处理，awk比较适合处理小型数据
+
+diff [-bBi] from-file to-file
+:比较两个文件区别（以行为比较单位），常用于分别两个版本的区别
+
+cmp [-s] file1 file2
+:比较两个文件的区别（以字节为单位比较）
+
+patch 
+:可以与diff协同进行补丁
+
+pr
+:文件打印准备
 
 ```
 
